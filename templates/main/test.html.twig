@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test</h1>
+
+    {#Création de variable#}
+    {% set name = "Jérémie" %}
+    {#Affichage d'une variable#}
+    <h2>Prénom : {{ name }}</h2>
+
+    {#Création de tableau#}
+    {% set colors = ['blue', 'pink', 'purple', 'green','red'] %}
+    {% for color in colors %}
+        {% if loop.first %}
+            <p>Première itération</p>
+        {% endif %}
+        <div>Position de l'élément {{ loop.index }} / {{ loop.length }}</div>
+        <div style="background-color: {{ color }}">{{ color }}</div>
+    {% endfor %}
+
+    {#Manipulation d'objet#}
+    {% set serie = {
+        title: "Breaking bad",
+        year: 2008
+    } %}
+    <h2>Title : {{ serie.title }}</h2>
+
+    {% for key, val in serie %}
+        <p>{{ key }}: {{ val }}</p>
+    {% endfor %}
+
+    {#Quelques filtres !#}
+
+    <h3>Filtres</h3>
+    <div>{{ name | upper }} : {{ name | length }}</div>
+    <div>Colors : {{ colors | join(", ") }}</div>
+    <div>{{ "now" | date('d-m-Y H:m:s') }}</div>
+</body>
+</html>
