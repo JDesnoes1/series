@@ -1,15 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Test</h1>
+{% extends 'base.html.twig' %}
 
+{% block title %}
+    {{ parent() }} Test
+{% endblock %}
+
+{% block body %}
     {#Création de variable#}
     {% set name = "Jérémie" %}
     {#Affichage d'une variable#}
@@ -42,5 +37,4 @@
     <div>{{ name | upper }} : {{ name | length }}</div>
     <div>Colors : {{ colors | join(", ") }}</div>
     <div>{{ "now" | date('d-m-Y H:m:s') }}</div>
-</body>
-</html>
+{% endblock %}
