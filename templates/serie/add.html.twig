@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<h2>Add a serie</h2>
+    {% embed 'views/form/serie_form.html.twig' %}
+        {% block h2 %} Add a new serie {% endblock %}
+        {% block buttonLabel %} Add a new one {% endblock %}
+    {% endembed %}
+
 {% endblock %}
 
