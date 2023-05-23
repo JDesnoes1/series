@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block body %}
+    {% embed 'views/form/default_form.html.twig' with {'form' : seasonForm} %}
+        {% block h2 %} Add a new season ! {% endblock %}
+        {% block buttonLabel %} Add a new one {% endblock %}
+    {% endembed %}
+{% endblock %}

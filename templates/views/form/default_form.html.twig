@@ -1,0 +1,8 @@
+{% form_theme form 'views/theme/form_theme_html.twig' %}
+
+<h2>{% block h2 %}</h2> {% endblock %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button>{% block buttonLabel %} {% endblock %}</button>
+{{ form_end(form) }}

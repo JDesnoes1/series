@@ -7,6 +7,7 @@
 {% block body %}
 <h2>Detail of a serie</h2>
     <section>
+        <a class="link_button" href="{{ path('season_add', {'id':serie.id})}}">Add season</a>
     <div class="serie-details">
         <div class="serie-poster">
             <img src="{{ asset('img/posters/series/') ~ serie.poster}}" alt="{{ serie.name }}">
